@@ -1,0 +1,98 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:white;
+}
+
+header{
+    background-color: rgb(46, 27, 150); 
+
+}
+
+header  h1{
+    text-align:center ;
+    color: white;
+    padding: 30px;
+}
+
+
+.tablero_score{
+
+    width: 200px;
+    margin: 20px auto;
+    border: solid 3px rgb(46, 27, 150); 
+    border-radius: 4px;
+    font-size: 46px;
+    text-align: center;
+    padding: 20px;
+    color:rgb(46, 27, 150); 
+    position: relative;
+
+}
+
+.tablero_score .badge{
+    background-color: red;
+    color: white;
+    padding:2px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    
+}
+
+#usuario_etiqueta{
+    position: absolute;
+    top: 35px;
+    left: -35px;
+}
+
+#maquina_etiqueta{
+    position: absolute;
+    top: 35px;
+    right: -35px;
+}
+
+.resultado{
+    color: rgb(46, 27, 150);
+    font-size: 42px;
+}
+
+.resultado > h2 {
+    text-align: center;
+}
+
+.elecciones{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px;
+}
+
+.eleccion{
+    border: 4px solid rgb(46, 27, 150);
+    border-radius: 50%;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.eleccion:hover{
+    border: 8px solid rgb(46, 27, 150);
+    border-radius: 50%;
+    padding: 20px;
+}
+
+.eleccion img{
+    width: 100px;
+    height: 100px;
+}
+
+.move{
+    text-align: center;
+    color: rgb(46, 27, 150);
+    font-size: 22px;
+    font-weight: 700;
+}
