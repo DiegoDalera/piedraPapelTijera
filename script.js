@@ -12,19 +12,25 @@ const tijera_div = document.getElementById("tijera");
 let puntajeUsuario = 0;
 let puntajeMaquina = 0;
 
+
 //EventListener
 piedra_div.addEventListener("click", function () {
     jugar("piedra")
+    sonido.play();
 })
 
 papel_div.addEventListener("click", function () {
     jugar("papel");
+    sonido.play();
 })
 
 tijera_div.addEventListener("click", function () {
     jugar("tijera")
+    sonido.play();
 })
 
+
+// Eleccion de la maquina
 function obtenerEleccionMaquina() {
     const elementos = ["piedra", "papel", "tijera"]
     let valorSelecionado = Math.floor(Math.random() * 3);
@@ -32,8 +38,7 @@ function obtenerEleccionMaquina() {
 }
 
 
-//logica juego
-
+//Logica del juego
 function jugar(eleccion_usuario) {
 
     const eleccionMaquina = obtenerEleccionMaquina();
@@ -68,6 +73,8 @@ function ganar(eleccionUsuario,eleccionMaquina) {
     usuario_score_span.innerHTML=puntajeUsuario;
     maquina_score_span.innerHTML=puntajeMaquina;
     resultado_div.innerHTML= `Tu: ${eleccionUsuario}  le gana a ${eleccionMaquina} de la maquina`
+    document.getElementById(eleccionUsuario).classList.add("brillo_verde");
+    setTimeout(function() { document.getElementById(eleccionUsuario).classList.remove("brillo_verde")},1000)
 }
 
 function perder(eleccionUsuario,eleccionMaquina) {
@@ -75,11 +82,28 @@ function perder(eleccionUsuario,eleccionMaquina) {
     usuario_score_span.innerHTML=puntajeUsuario;
     maquina_score_span.innerHTML=puntajeMaquina;
     resultado_div.innerHTML= `Tu: ${eleccionUsuario}  pierde con  ${eleccionMaquina} de la maquina`
+    document.getElementById(eleccionUsuario).classList.add("brillo_rojo");
+    setTimeout(function() { document.getElementById(eleccionUsuario).classList.remove("brillo_rojo")},1000)
 }
+
 function empatar(eleccionUsuario,eleccionMaquina) {
     usuario_score_span.innerHTML=puntajeUsuario;
     maquina_score_span.innerHTML=puntajeMaquina;
     resultado_div.innerHTML= `Tu: ${eleccionUsuario}  empata con  ${eleccionMaquina} de la maquina`
+    document.getElementById(eleccionUsuario).classList.add("brillo_amarillo");
+    setTimeout(function() { document.getElementById(eleccionUsuario).classList.remove("brillo_amarillo")},1000)
+
 }
 
 
+const cargarSonido = function (fuente) {
+    const sonido = document.createElement("audio");
+    sonido.src = fuente;
+    sonido.setAttribute("preload", "auto");
+    sonido.setAttribute("controls", "none");
+    sonido.style.display = "none"; // <-- oculto 
+    document.body.appendChild(sonido);
+    return sonido;
+};
+
+const sonido = cargarSonido("sound/beep.mp3");

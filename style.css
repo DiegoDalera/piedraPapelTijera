@@ -1,3 +1,4 @@
+
 *{
     padding: 0;
     margin: 0;
@@ -6,6 +7,7 @@
 
 body{
     background-color:white;
+    font-family: 'Lato', sans-serif;
 }
 
 header{
@@ -18,7 +20,6 @@ header  h1{
     color: white;
     padding: 30px;
 }
-
 
 .tablero_score{
 
@@ -80,11 +81,10 @@ header  h1{
 }
 
 .eleccion:hover{
-    border: 8px solid rgb(46, 27, 150);
-    border-radius: 50%;
-    padding: 20px;
-}
+   
+    background-color: aqua;
 
+}
 .eleccion img{
     width: 100px;
     height: 100px;
@@ -95,4 +95,19 @@ header  h1{
     color: rgb(46, 27, 150);
     font-size: 22px;
     font-weight: 700;
+}
+
+.brillo_verde{
+    border: 4px solid rgb(51, 217, 39);
+    box-shadow: green;
+}
+
+.brillo_rojo{
+    border: 4px solid red;
+    box-shadow: rgb(224, 13, 76);
+}
+
+.brillo_amarillo{
+    border: 4px solid yellow;
+    box-shadow: rgb(147, 147, 2);
 }
